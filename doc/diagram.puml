@@ -1,0 +1,90 @@
+@startuml firstDraft
+
+    object lordOfRingsGame
+    object characters
+    object name
+
+    object healthPoints
+    object armor
+
+    object randomPower
+
+    object elves
+    object hateBonusvsOrcs
+    object heros
+
+    object hobbits
+    object beasts
+    object fearAgainstTrasgos
+    object humans
+    object charactersGoal
+    object attack
+    
+    object orcs
+    object strengthBonusAgainstAll
+
+    object trasgos
+    object goalGame
+    object turnsGoal
+    object createArmies
+    object fightBtwThem
+
+    object turns
+    object board
+    object characterPosition
+    object position
+    object updatePositions
+    object headCounts
+    object aliveStatus
+
+
+    characters *-- heros
+    characters *-- beasts
+    characters *-- charactersGoal
+    characters *-- armor
+    characters *-- healthPoints
+    characters *-- name
+    characters *-- aliveStatus
+
+    lordOfRingsGame *-- turns
+    lordOfRingsGame *-- characters
+    lordOfRingsGame *-- goalGame
+    lordOfRingsGame *-- board
+    goalGame *-- createArmies
+
+    charactersGoal *-- attack
+
+    heros <|-- elves
+    heros <|-- hobbits
+    heros <|-- humans
+
+    beasts <|-- orcs
+    beasts <|-- trasgos
+
+    elves *-- hateBonusvsOrcs
+    hobbits *-- fearAgainstTrasgos
+    orcs *-- strengthBonusAgainstAll
+
+    attack *-- randomPower
+    turns *-- turnsGoal
+    turnsGoal *-- fightBtwThem
+    turnsGoal *-- updatePositions
+
+    board --> characters
+    board *-- characterPosition
+
+    characters *-- position
+
+    createArmies *-- headCounts
+    createArmies --> characters
+
+    turns --> board
+
+
+    
+
+
+
+
+
+@enduml
