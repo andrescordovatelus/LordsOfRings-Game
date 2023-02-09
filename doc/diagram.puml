@@ -34,7 +34,7 @@
     object characterPosition
     object position
     object updatePositions
-    object headCounts
+    object armies
     object aliveStatus
 
 
@@ -47,7 +47,6 @@
     characters *-- aliveStatus
 
     lordOfRingsGame *-- turns
-    lordOfRingsGame *-- characters
     lordOfRingsGame *-- goalGame
     lordOfRingsGame *-- board
     goalGame *-- createArmies
@@ -69,22 +68,18 @@
     turns *-- turnsGoal
     turnsGoal *-- fightBtwThem
     turnsGoal *-- updatePositions
+    updatePositions --> characters
 
     board --> characters
     board *-- characterPosition
 
     characters *-- position
 
-    createArmies *-- headCounts
+    createArmies *-- armies
     createArmies --> characters
+    armies --> characters
+    turns --> armies
 
     turns --> board
-
-
-    
-
-
-
-
 
 @enduml
