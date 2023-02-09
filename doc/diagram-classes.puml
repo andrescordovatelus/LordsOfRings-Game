@@ -1,8 +1,5 @@
 @startuml LOTRGame
 
-    
-    
-
     package Game{
         Class LOTRGame{
             -Armies armies
