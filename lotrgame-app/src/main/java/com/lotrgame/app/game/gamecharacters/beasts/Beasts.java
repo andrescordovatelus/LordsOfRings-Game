@@ -1,5 +1,7 @@
 package com.lotrgame.app.game.gamecharacters.beasts;
 
-public abstract class Beasts {
+import com.lotrgame.app.game.gamecharacters.Character;
+
+public abstract class Beasts extends Character{
     
 }
