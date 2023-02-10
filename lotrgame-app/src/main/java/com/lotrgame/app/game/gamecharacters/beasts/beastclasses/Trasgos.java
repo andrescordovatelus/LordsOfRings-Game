@@ -7,6 +7,7 @@ public class Trasgos extends Beasts{
     public Trasgos(){
         super();
         this.strenghtBonusAgainstAll = 0;
+        this.healthPoint = 325;
     }
 
     @Override

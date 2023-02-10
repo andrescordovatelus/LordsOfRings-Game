@@ -4,8 +4,11 @@ public abstract class Character {
     protected String name;
     protected int healthPoint;
     protected int position;
-    protected boolean aliveStatus;
 
     public abstract int randomPower();
+
+    public void setHealthPoint(int healthPoint) {
+        this.healthPoint = healthPoint;
+    }
 }
 

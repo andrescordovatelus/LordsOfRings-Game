@@ -8,6 +8,7 @@ public class Elves extends Heroes{
         super();
         this.hateAgainstOrcs = 10;
         this.fearAgainstTrasgos = 0;
+        this.healthPoint = 250;
     }
 
     @Override
@@ -29,14 +30,6 @@ public class Elves extends Heroes{
 
         System.out.println("final" + finalPower);
         return finalPower;
-    }
-
-    public int getHateAgainstOrcs() {
-        return hateAgainstOrcs;
-    }
-
-    public int getFearAgainstTrasgos() {
-        return fearAgainstTrasgos;
     }
 
     @Override

@@ -6,4 +6,11 @@ public abstract class Heroes extends Character{
 
     protected int hateAgainstOrcs;
     protected int fearAgainstTrasgos;
+
+    public int getHateAgainstOrcs() {
+        return hateAgainstOrcs;
+    }
+    public int getFearAgainstTrasgos() {
+        return fearAgainstTrasgos;
+    }
 }

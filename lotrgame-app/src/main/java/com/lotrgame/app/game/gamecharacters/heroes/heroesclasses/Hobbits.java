@@ -7,10 +7,7 @@ public class Hobbits extends Heroes{
         super();
         this.hateAgainstOrcs = 0;
         this.fearAgainstTrasgos = 5;
-    }
-
-    public int getFearAgainstTrasgos() {
-        return fearAgainstTrasgos;
+        this.healthPoint = 200;
     }
 
     @Override
@@ -32,10 +29,6 @@ public class Hobbits extends Heroes{
 
         System.out.println("final" + finalPower);
         return finalPower;
-    }
-
-    public int getHateAgainstOrcs() {
-        return hateAgainstOrcs;
     }
 
     @Override

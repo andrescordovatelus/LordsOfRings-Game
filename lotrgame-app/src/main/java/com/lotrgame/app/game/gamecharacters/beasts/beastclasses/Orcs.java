@@ -6,6 +6,7 @@ public class Orcs extends Beasts{
     public Orcs(){
         super();
         this.strenghtBonusAgainstAll = 0.10;
+        this.healthPoint = 300;
     }
 
     @Override
@@ -13,10 +14,6 @@ public class Orcs extends Beasts{
         int power1 = (int)(Math.random()*90 + 1);
         System.out.println("Dado1: " + power1);
         return power1;
-    }
-
-    public double getStrenghtBonusAgainstAll() {
-        return strenghtBonusAgainstAll;
     }
 
     @Override
