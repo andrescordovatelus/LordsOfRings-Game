@@ -16,3 +16,4 @@ public abstract class Character {
 
     public abstract int randomPower();
 }
+
