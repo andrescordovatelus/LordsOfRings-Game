@@ -1,5 +1,5 @@
 package com.lotrgame.app.game.gamecharacters.heroes;
 
-public interface Heroes {
+public abstract class Heroes {
     
 }
