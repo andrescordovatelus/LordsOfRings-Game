@@ -2,17 +2,16 @@ package com.lotrgame.app.game;
 
 import java.util.ArrayList;
 
-import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
-import com.lotrgame.app.game.gamecharacters.beasts.beastclasses.Orcs;
-import com.lotrgame.app.game.gamecharacters.beasts.beastclasses.Trasgos;
-import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
-import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Elves;
-import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Hobbits;
-import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Human;
+import com.lotrgame.app.game.gamecharacters.Character;
 
 public class Armies {
-    private ArrayList<Heroes> squadA;
-    private ArrayList<Beasts> squadB;
+    private int ElvesHC = 2;
+    private int HobbitsHC = 2;
+    private int HumansHC = 1;
+    private int OrcsHC = 3;
+    private int TrasgosHC = 2;
+    private ArrayList<Character> squadA;
+    private ArrayList<Character> squadB;
 
     public Armies(){
 
@@ -29,7 +28,7 @@ public class Armies {
         }
 
         for (int i = 0; i < sizeSquad; i++) {
-
+            //TODO Logica de los vergazons entre armies
             
             System.out.println("Estan atacandoooooo");
         }
@@ -39,38 +38,35 @@ public class Armies {
 
     
     public void addCharacters(){
-        squadA = new ArrayList<>();
-        squadB = new ArrayList<>();
-        Human a = new Human();
-        squadA.add(a);
-        Human b = new Human();
-        squadA.add(b);
-        Human c = new Human();
-        squadA.add(c);
-        Hobbits h = new Hobbits();
-        squadA.add(h);
-        Elves e = new Elves();
-        squadA.add(e);
+    CharacterFactory characterFactory = new CharacterFactory();
+    squadA = new ArrayList<>();
+    squadB = new ArrayList<>();   
 
-
-        Trasgos p = new Trasgos();
-        squadB.add(p);
-        Trasgos v = new Trasgos();
-        squadB.add(v);
-        Trasgos o = new Trasgos();
-        squadB.add(o);
-        Orcs n = new Orcs();
-        squadB.add(n);
-        Orcs m = new Orcs();
-        squadB.add(m);
+    
+    for (int i = 0; i < ElvesHC; i++) {
+        squadA.add(characterFactory.getNewCharacter("Elves"));
+    }
+    for (int i = 0; i < HobbitsHC; i++) {
+        squadA.add(characterFactory.getNewCharacter("Hobbits"));
+    }
+    for (int i = 0; i < HumansHC; i++) {
+        squadA.add(characterFactory.getNewCharacter("Human"));
+    }
+    for (int i = 0; i < OrcsHC; i++) {
+        squadB.add(characterFactory.getNewCharacter("Elves"));
+    }
+    for (int i = 0; i < TrasgosHC; i++) {
+        squadB.add(characterFactory.getNewCharacter("Hobbits"));
+    }
+    
 
     }
 
-    public ArrayList<Heroes> getSquadA() {
+    public ArrayList<Character> getSquadA() {
         return squadA;
     }
 
-    public ArrayList<Beasts> getSquadB() {
+    public ArrayList<Character> getSquadB() {
         return squadB;
     }
     

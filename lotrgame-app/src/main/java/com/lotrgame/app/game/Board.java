@@ -2,18 +2,17 @@ package com.lotrgame.app.game;
 
 import java.util.ArrayList;
 
-import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
-import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
+import com.lotrgame.app.game.gamecharacters.Character;
 
 public class Board {
 
-    private ArrayList<Heroes> squadA;
-    private ArrayList<Beasts> squadB;
+    private ArrayList<Character> squadA;
+    private ArrayList<Character> squadB;
 
 
     
 
-    public Board(ArrayList<Heroes> squadA, ArrayList<Beasts> squadB) {
+    public Board(ArrayList<Character> squadA, ArrayList<Character> squadB) {
         this.squadA = squadA;
         this.squadB = squadB;
     }

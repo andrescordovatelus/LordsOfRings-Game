@@ -1,6 +1,7 @@
 package com.lotrgame.app.game;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LOTRGame {
     private Armies armies;
@@ -15,6 +16,7 @@ public class LOTRGame {
     }
 
     public void setGame(){
+        Scanner s = new Scanner(System.in);
         armies = new Armies();
 
         armies.addCharacters();
@@ -26,13 +28,13 @@ public class LOTRGame {
         
         turns = new Turns(armies,board);
 
-        while(turns.isAnyArmyDefeated()){
+        while(!turns.isAnyArmyDefeated()){
             turns.startTurn();
 
+            System.out.println("Presio");
+           // s.wait();
+
         }
-
-        
-
 
 
     }
