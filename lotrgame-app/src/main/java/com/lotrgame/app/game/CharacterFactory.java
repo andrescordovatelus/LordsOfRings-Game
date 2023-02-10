@@ -29,7 +29,7 @@ public class CharacterFactory {
         if (characterType == null) {
             return null;
         }
-        if (characterType.equalsIgnoreCase("Orc")) {
+        if (characterType.equalsIgnoreCase("Orcs")) {
             return new Orcs();
         } else if (characterType.equalsIgnoreCase("Trasgos")) {
             return new Trasgos();

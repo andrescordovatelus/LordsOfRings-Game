@@ -13,4 +13,8 @@ public abstract class Heroes extends Character{
     public int getFearAgainstTrasgos() {
         return fearAgainstTrasgos;
     }
+
+    public int getHealthPoint(){
+        return healthPoint;
+    }
 }

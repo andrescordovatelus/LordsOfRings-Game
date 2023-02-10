@@ -20,4 +20,8 @@ public class Orcs extends Beasts{
     public String toString() {
         return "Orcs";
     }
+
+    public int getHealthPoint(){
+        return this.healthPoint;
+    }
 }

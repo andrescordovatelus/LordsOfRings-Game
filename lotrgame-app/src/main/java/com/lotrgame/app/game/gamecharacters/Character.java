@@ -7,9 +7,6 @@ public abstract class Character {
 
     public abstract int randomPower();
 
-    public int getHealthPoint() {
-        return healthPoint;
-    }
 
     public void setHealthPoint(int healthPoint) {
         this.healthPoint = healthPoint;

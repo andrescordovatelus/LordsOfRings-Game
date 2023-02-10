@@ -36,4 +36,8 @@ public class Hobbits extends Heroes{
         return "Hobbits";
     }
 
+    public int getHealthPoint(){
+        return this.healthPoint;
+    }
+
 }

@@ -28,13 +28,23 @@ public class LOTRGame {
         
         turns = new Turns(armies,board);
 
+        turns.setArmiesForFight();
+
         while(!turns.isAnyArmyDefeated()){
             turns.startTurn();
 
-            System.out.println("Presio");
            // s.wait();
 
         }
+
+        System.out.println("Prueba de ifs");
+        
+        if(turns.getArmies().getSquadA().size()==0){
+            System.out.println("EQUIPO 2 GANO");
+
+           }else if(turns.getArmies().getSquadB().size()==0){
+            System.out.println("EQUIPO 1 GANO");
+           }
 
 
     }

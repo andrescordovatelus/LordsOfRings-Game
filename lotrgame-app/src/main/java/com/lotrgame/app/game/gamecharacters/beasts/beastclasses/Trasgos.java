@@ -21,4 +21,9 @@ public class Trasgos extends Beasts{
     public String toString() {
         return "Trasgos";
     }
+
+    public int getHealthPoint(){
+        return this.healthPoint;
+    }
+
 }

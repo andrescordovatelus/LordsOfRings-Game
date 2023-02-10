@@ -37,5 +37,8 @@ public class Elves extends Heroes{
         return "Elves";
     }
 
+    public int getHealthPoint(){
+        return this.healthPoint;
+    }
     
 }

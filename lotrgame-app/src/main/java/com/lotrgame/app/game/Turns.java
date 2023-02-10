@@ -19,10 +19,14 @@ public class Turns {
 
     }
 
+    public void setArmiesForFight(){
+        armies.addCharacters();
+    }
+
 
     public void startTurn(){
 
-        armies.addCharacters();
+        
         armies.attack();
 
         

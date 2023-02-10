@@ -10,6 +10,16 @@ public abstract class Beasts extends Character{
         super();
     }
 
+    public int getHealthPoint(){
+        return healthPoint;
+    }
+
+  /*   public void setHealthPoint(int healthPoints){
+        this.healthPoint = healthPoints;
+    }
+    */
+
+
     public double getStrenghtBonusAgainstAll() {
         return strenghtBonusAgainstAll;
     }

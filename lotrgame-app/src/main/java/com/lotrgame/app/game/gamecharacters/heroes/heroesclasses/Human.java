@@ -21,4 +21,8 @@ public class Human extends Heroes{
     public String toString() {
         return "Human";
     }
+
+    public int getHealthPoint(){
+        return this.healthPoint;
+    }
 }
