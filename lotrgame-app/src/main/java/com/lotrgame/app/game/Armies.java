@@ -39,19 +39,22 @@ public class Armies {
             //int resolve = squadA.get(i).randomPower() + squadA.get(i).
 
             //squadB.get(i).setHealthPoint(resolve);
+            
+            // SQUADA PEGA
+            // squadB.healpoints -= squadA.randomPower() + hateAgainstOrcs - fearAgainstTrasgos
+            
+            // SQUADB PEGA
+            // squadA.healpoints -= squadB.(randomPower() + randomPower()*strenghtBonusAgainstAll)
+
+            // IF(squadA =< 0)
+            //     remove
+            
+            // IF(squadB =< 0)
+            //     remove
+
         }
 
-        // SQUADA PEGA
-        // squadB.healpoints -= squadA.randomPower() + hateAgainstOrcs - fearAgainstTrasgos
         
-        // SQUADB PEGA
-        // squadA.healpoints -= squadB.(randomPower() + randomPower()*strenghtBonusAgainstAll)
-
-        // IF(squadA =< 0)
-        //     remove
-        
-        // IF(squadB =< 0)
-        //     remove
 
     }
     
