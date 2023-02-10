@@ -13,7 +13,8 @@ public class Orcs extends Beasts{
 
     @Override
     public int randomPower() {
-        // TODO Auto-generated method stub
-        return 0;
+        int power1 = (int)(Math.random()*90 + 1);
+        System.out.println("Dado1: " + power1);
+        return power1;
     }
 }

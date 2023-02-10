@@ -4,7 +4,7 @@ import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class Elves extends Heroes{
     
-    protected final int hateAgainstOrcs = 1;
+    protected final int hateAgainstOrcs = 10;
 
     public Elves(){
         //TODO
@@ -12,7 +12,22 @@ public class Elves extends Heroes{
 
     @Override
     public int randomPower() {
-        // TODO Auto-generated method stub
-        return 0;
+        int finalPower=0;
+        int powerOne = (int)(Math.random()*100 +1);
+        int powerTwo = (int)(Math.random()*100 +1);
+
+        System.out.println("Power1 " + powerOne);
+        System.out.println("Power2 " + powerTwo);
+
+
+        if(powerOne > powerTwo){
+            finalPower = powerOne;
+        }
+        else{
+            finalPower = powerTwo;
+        }
+
+        System.out.println("final" + finalPower);
+        return finalPower;
     }
 }
