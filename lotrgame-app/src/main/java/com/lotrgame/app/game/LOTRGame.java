@@ -1,5 +1,7 @@
 package com.lotrgame.app.game;
 
+import java.util.ArrayList;
+
 public class LOTRGame {
     private Armies armies;
     private Turns turns;
@@ -12,7 +14,30 @@ public class LOTRGame {
 
     }
 
-    public void Execute(){
+    public void setGame(){
+        armies = new Armies();
+
+        armies.addCharacters();
+
+        board = new Board(armies.getSquadA(),armies.getSquadB());
+
+
+
+        
+        turns = new Turns(armies,board);
+
+        while(turns.isAnyArmyDefeated()){
+            turns.startTurn();
+
+        }
+
+        
+
+
+
+    }
+
+    public void execute(){
         
     }
 

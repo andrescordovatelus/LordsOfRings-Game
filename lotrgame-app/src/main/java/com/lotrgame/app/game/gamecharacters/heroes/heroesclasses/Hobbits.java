@@ -1,5 +1,6 @@
 package com.lotrgame.app.game.gamecharacters.heroes.heroesclasses;
 
+import com.lotrgame.app.game.gamecharacters.Character;
 import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class Hobbits extends Heroes{

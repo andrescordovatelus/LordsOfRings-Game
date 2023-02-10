@@ -1,5 +1,6 @@
 package com.lotrgame.app.game.gamecharacters.beasts.beastclasses;
 
+import com.lotrgame.app.game.gamecharacters.Character;
 import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 
 public class Orcs extends Beasts{

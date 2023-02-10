@@ -5,12 +5,52 @@ public class Turns {
     private Board board;
 
 
-    public Turns() {
+    
+
+    public Turns(Armies armies, Board board) {
+        this.armies = armies;
+        this.board = board;
     }
+
 
     void getAttack(){
 
+
+
     }
+
+
+    public void startTurn(){
+
+        armies.attack();
+
+        
+
+        
+        
+    }
+
+    public void getUpdatePosition(){
+
+    }
+
+
+    public Armies getArmies() {
+        return armies;
+    }
+
+    public boolean isAnyArmyDefeated(){
+        if(armies.getSquadA().size() == 0 || armies.getSquadB().size() == 0){
+            return true;
+
+        }
+        return false;
+    }
+
+
+    
+    
+    
 
     
 }
