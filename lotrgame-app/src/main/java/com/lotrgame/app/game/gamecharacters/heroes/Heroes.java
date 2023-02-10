@@ -1,5 +1,7 @@
 package com.lotrgame.app.game.gamecharacters.heroes;
 
-public abstract class Heroes {
+import com.lotrgame.app.game.gamecharacters.Character;
+
+public abstract class Heroes extends Character{
     
 }
