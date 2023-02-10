@@ -2,19 +2,18 @@ package com.lotrgame.app.game.gamecharacters;
 
 public abstract class Character {
     protected String name;
-    protected int healthPoints;
+    protected int healthPoint;
     protected int position;
-    protected Boolean aliveStatus;
+    protected boolean aliveStatus;
 
-
-    public void attack(){
-
+    public void atack(){
+        //TODO
     }
 
-    public int getAttack(){
-
-        return 0;
+    public void getAtack(){
+        //TODO
     }
 
+    public abstract int randomPower();
 }
 
