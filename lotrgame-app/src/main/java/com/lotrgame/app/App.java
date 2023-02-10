@@ -10,12 +10,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        LOTRGame game = new LOTRGame();
-        game.execute();
+        //LOTRGame game = new LOTRGame();
+        //game.setGame();
 
-        System.out.println("Hello world");
-
-
+        //System.out.println("Prueba");
 
     }
 }
