@@ -2,12 +2,11 @@ package com.lotrgame.app.game.gamecharacters.heroes.heroesclasses;
 import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class Hobbits extends Heroes{
-
-    protected final int hateAgainstOrcs = 0;
-    protected final int fearAgainstTrasgos = 5;
     
     public Hobbits(){
-        //TODO
+        super();
+        this.hateAgainstOrcs = 0;
+        this.fearAgainstTrasgos = 5;
     }
 
     public int getFearAgainstTrasgos() {

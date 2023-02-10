@@ -1,14 +1,11 @@
 package com.lotrgame.app.game.gamecharacters.beasts.beastclasses;
-
-import com.lotrgame.app.game.gamecharacters.Character;
 import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 
 public class Orcs extends Beasts{
     
-    protected double strenghtBonusAgainstAll = 0.10;
-
     public Orcs(){
-        //TODO
+        super();
+        this.strenghtBonusAgainstAll = 0.10;
     }
 
     @Override

@@ -5,7 +5,8 @@ import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 public class Trasgos extends Beasts{
     
     public Trasgos(){
-        //TODO
+        super();
+        this.strenghtBonusAgainstAll = 0;
     }
 
     @Override
