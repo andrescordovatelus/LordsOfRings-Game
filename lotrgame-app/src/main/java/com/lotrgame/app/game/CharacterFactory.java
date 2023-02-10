@@ -9,11 +9,13 @@ import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Human;
 
 public class CharacterFactory {
 
-    public Character getCharacter(String characterType) {
+    public CharacterFactory(){}
+
+    public Character getNewCharacter(String characterType) {
         if (characterType == null) {
             return null;
         }
-        if (characterType.equalsIgnoreCase("Elves")) {
+        if (characterType.equalsIgnoreCase("elves")) {
             return new Elves();
         } else if (characterType.equalsIgnoreCase("Hobbits")) {
             return new Hobbits();
