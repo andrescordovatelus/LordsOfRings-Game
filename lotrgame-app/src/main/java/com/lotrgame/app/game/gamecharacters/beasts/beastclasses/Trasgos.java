@@ -14,4 +14,9 @@ public class Trasgos extends Beasts{
         System.out.println("Dado1: " + power1);
         return power1;
     }
+
+    @Override
+    public String toString() {
+        return "Trasgos";
+    }
 }

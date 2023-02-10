@@ -29,9 +29,24 @@ public class Armies {
 
         for (int i = 0; i < sizeSquad; i++) {
             //TODO Logica de los vergazons entre armies
+            //getClass getName
+
+            System.out.println(squadA.get(i).toString());
             
             System.out.println("Estan atacandoooooo");
         }
+
+        // SQUADA PEGA
+        // squadB.healpoints -= squadA.randomPower() + hateAgainstOrcs - fearAgainstTrasgos
+        
+        // SQUADB PEGA
+        // squadA.healpoints -= squadB.(randomPower() + randomPower()*strenghtBonusAgainstAll)
+
+        // IF(squadA =< 0)
+        //     remove
+        
+        // IF(squadB =< 0)
+        //     remove
 
     }
     

@@ -6,14 +6,6 @@ public abstract class Character {
     protected int position;
     protected boolean aliveStatus;
 
-    public void atack(){
-        //TODO
-    }
-
-    public void getAtack(){
-        //TODO
-    }
-
     public abstract int randomPower();
 }
 

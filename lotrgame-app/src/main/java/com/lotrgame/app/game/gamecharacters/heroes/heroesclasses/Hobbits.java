@@ -3,6 +3,7 @@ import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class Hobbits extends Heroes{
 
+    protected final int hateAgainstOrcs = 0;
     protected final int fearAgainstTrasgos = 5;
     
     public Hobbits(){
@@ -33,4 +34,14 @@ public class Hobbits extends Heroes{
         System.out.println("final" + finalPower);
         return finalPower;
     }
+
+    public int getHateAgainstOrcs() {
+        return hateAgainstOrcs;
+    }
+
+    @Override
+    public String toString() {
+        return "Hobbits";
+    }
+
 }
