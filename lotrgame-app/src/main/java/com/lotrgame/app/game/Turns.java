@@ -22,6 +22,7 @@ public class Turns {
 
     public void startTurn(){
 
+        armies.addCharacters();
         armies.attack();
 
         

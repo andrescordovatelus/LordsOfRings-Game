@@ -36,7 +36,17 @@ public class Armies {
             System.out.println(squadA.get(i).toString());   
             System.out.println("Estan atacandoooooo");
 
-            //int resolve = squadA.get(i).randomPower() + squadA.get(i).
+            int squadADamaged = squadA.get(i).randomPower() + squadA.get(i).getHateAgainstOrcs() - squadA.get(i).getFearAgainstTrasgos();
+
+            int vidaB = squadB.get(i).getHealthPoint();
+            int resolve = vidaB - squadADamaged;
+
+            if(resolve <= 0){
+                squadB.remove(i);
+            }
+            else{
+                squadB.get(i).setHealthPoint(resolve);
+            }
 
             //squadB.get(i).setHealthPoint(resolve);
         }
@@ -64,29 +74,29 @@ public class Armies {
 
     
     for (int i = 0; i < ElvesHC; i++) {
-        squadA.add(characterFactory.getNewCharacter("Elves"));
+        squadA.add(characterFactory.getNewCharacterHeroes("Elves"));
     }
     for (int i = 0; i < HobbitsHC; i++) {
-        squadA.add(characterFactory.getNewCharacter("Hobbits"));
+        squadA.add(characterFactory.getNewCharacterHeroes("Hobbits"));
     }
     for (int i = 0; i < HumansHC; i++) {
-        squadA.add(characterFactory.getNewCharacter("Human"));
+        squadA.add(characterFactory.getNewCharacterHeroes("Human"));
     }
     for (int i = 0; i < OrcsHC; i++) {
-        squadB.add(characterFactory.getNewCharacter("Elves"));
+        squadB.add(characterFactory.getNewCharacterBeasts("Orcs"));
     }
     for (int i = 0; i < TrasgosHC; i++) {
-        squadB.add(characterFactory.getNewCharacter("Hobbits"));
+        squadB.add(characterFactory.getNewCharacterBeasts("Trasgos"));
     }
     
 
     }
 
-    public ArrayList<Character> getSquadA() {
+    public ArrayList<Heroes> getSquadA() {
         return squadA;
     }
 
-    public ArrayList<Character> getSquadB() {
+    public ArrayList<Beasts> getSquadB() {
         return squadB;
     }
     
