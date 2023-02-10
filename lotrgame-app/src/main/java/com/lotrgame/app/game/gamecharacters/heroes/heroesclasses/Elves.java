@@ -3,11 +3,12 @@ package com.lotrgame.app.game.gamecharacters.heroes.heroesclasses;
 import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class Elves extends Heroes{
-    
-    protected final int hateAgainstOrcs = 10;
 
     public Elves(){
-        //TODO
+        super();
+        this.hateAgainstOrcs = 10;
+        this.fearAgainstTrasgos = 0;
+        this.healthPoint = 250;
     }
 
     @Override
@@ -30,4 +31,11 @@ public class Elves extends Heroes{
         System.out.println("final" + finalPower);
         return finalPower;
     }
+
+    @Override
+    public String toString() {
+        return "Elves";
+    }
+
+    
 }
