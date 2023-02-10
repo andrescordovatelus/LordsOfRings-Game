@@ -6,6 +6,10 @@ public abstract class Beasts extends Character{
 
     protected double strenghtBonusAgainstAll;
 
+    public Beasts(){
+        super();
+    }
+
     public double getStrenghtBonusAgainstAll() {
         return strenghtBonusAgainstAll;
     }

@@ -1,17 +1,17 @@
 package com.lotrgame.app.game;
-
-import com.lotrgame.app.game.gamecharacters.Character;
+import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 import com.lotrgame.app.game.gamecharacters.beasts.beastclasses.Orcs;
 import com.lotrgame.app.game.gamecharacters.beasts.beastclasses.Trasgos;
 import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Elves;
 import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Hobbits;
 import com.lotrgame.app.game.gamecharacters.heroes.heroesclasses.Human;
+import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class CharacterFactory {
 
     public CharacterFactory(){}
 
-    public Character getNewCharacter(String characterType) {
+    public Heroes getNewCharacterHeroes(String characterType) {
         if (characterType == null) {
             return null;
         }
@@ -21,7 +21,15 @@ public class CharacterFactory {
             return new Hobbits();
         } else if (characterType.equalsIgnoreCase("Human")) {
             return new Human();
-        } else if (characterType.equalsIgnoreCase("Orc")) {
+        }
+        return null;
+    }
+
+    public Beasts getNewCharacterBeasts(String characterType) {
+        if (characterType == null) {
+            return null;
+        }
+        if (characterType.equalsIgnoreCase("Orc")) {
             return new Orcs();
         } else if (characterType.equalsIgnoreCase("Trasgos")) {
             return new Trasgos();
