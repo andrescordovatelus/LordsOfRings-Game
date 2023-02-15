@@ -21,7 +21,17 @@ public class Orcs extends Beasts{
         return "Orcs";
     }
 
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        return super.getName();
+    }
+
     public int getHealthPoint(){
         return this.healthPoint;
+    }
+
+    public double getStrenghtBonusAgainstAll() {
+        return strenghtBonusAgainstAll;
     }
 }

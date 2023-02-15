@@ -25,4 +25,10 @@ public class Human extends Heroes{
     public int getHealthPoint(){
         return this.healthPoint;
     }
+
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        return super.getName();
+    }
 }

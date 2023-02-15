@@ -11,5 +11,10 @@ public abstract class Character {
     public void setHealthPoint(int healthPoint) {
         this.healthPoint = healthPoint;
     }
+
+    public String getName() {
+        return name;
+    }
+    
 }
 

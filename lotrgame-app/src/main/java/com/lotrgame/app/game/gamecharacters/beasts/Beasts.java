@@ -19,6 +19,12 @@ public abstract class Beasts extends Character{
     }
     */
 
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        return super.getName();
+    }
+
 
     public double getStrenghtBonusAgainstAll() {
         return strenghtBonusAgainstAll;

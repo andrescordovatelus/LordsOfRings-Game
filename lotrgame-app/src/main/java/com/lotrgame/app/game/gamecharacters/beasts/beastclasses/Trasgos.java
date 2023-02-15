@@ -22,6 +22,12 @@ public class Trasgos extends Beasts{
         return "Trasgos";
     }
 
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        return super.getName();
+    }
+
     public int getHealthPoint(){
         return this.healthPoint;
     }

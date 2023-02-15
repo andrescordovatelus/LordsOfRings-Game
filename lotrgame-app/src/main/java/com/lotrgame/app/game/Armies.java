@@ -1,7 +1,9 @@
 package com.lotrgame.app.game;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
+import com.lotrgame.app.game.gamecharacters.Character;
 import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
@@ -19,7 +21,6 @@ public class Armies {
 
     }
 
-
     void attack() {
         int sizeSquad = Math.min(squadB.size(), squadA.size());
         System.out.println();
@@ -27,77 +28,116 @@ public class Armies {
         System.out.println();
 
         for (int i = 0; i < sizeSquad; i++) {
+            Scanner s = new Scanner(System.in);
             int aux = sizeSquad;
 
-            // TODO Logica de los vergazons entre armies
-            // getClass getName
-
             System.out.println(squadA.get(i).toString());
-            System.out.println("Estan atacandoooooo");
-
-            int squadADamaged = squadA.get(i).randomPower() + squadA.get(i).getHateAgainstOrcs()
-                    - squadA.get(i).getFearAgainstTrasgos();
-            // int squadBDamaged = squadB.get(i).randomPower()
+            System.out.println("Iniciando ronda" + (i + 1));
 
             System.out.println(squadA.toString());
-
             System.out.println(squadB.toString());
+            System.out.println("-----------------------------------");
 
-            for (int j = 0; j < squadA.size(); j++) {
-                System.out.print(squadA.get(j).toString());
-                System.out.print(" " + squadA.get(j).getHealthPoint() + " ");
-            }
-            System.out.println(" \n");
+            // for (int j = 0; j < squadA.size(); j++) {
+            // System.out.print(squadA.get(j).toString());
+            // System.out.print(" "+ squadA.get(j).getHealthPoint() + " ");
+            // }
+            // System.out.println(" \n");
 
-            for (int j = 0; j < squadB.size(); j++) {
-                System.out.print(squadB.get(j).toString());
-                System.out.print(" " + squadB.get(j).getHealthPoint() + " ");
-            }
-
-            System.out.println();
-
-            int vidaB = squadB.get(i).getHealthPoint();
-
-            int resolve = vidaB - squadADamaged;
-
-            System.out.println("VIDA RESRTANTE " + squadB.get(i).getHealthPoint());
-
-            if (resolve <= 0) {
-                squadB.remove(i);
-            } else {
-                squadB.get(i).setHealthPoint(resolve);
-            }
-
-            // TODO HACER RESOLVE PARA EQUPO b
-
-            int squadBDamaged = squadB.get(i).randomPower();
-            int vidaA = squadA.get(i).getHealthPoint();
-            int resolveforA = vidaA - squadBDamaged;
-
-            /*
-             * System.out.println(squadADamaged);
-             * System.out.println(resolve);
-             * System.out.println(vidaB);
-             */
-
-            // squadB.get(i).setHealthPoint(resolve);
-
-            // SQUADA PEGA
-            // squadB.healpoints -= squadA.randomPower() + hateAgainstOrcs -
-            // fearAgainstTrasgos
-
-            // SQUADB PEGA
-            // squadA.healpoints -= squadB.(randomPower() +
-            // randomPower()*strenghtBonusAgainstAll)
-
-            // IF(squadA =< 0)
-            // remove
-
-            // IF(squadB =< 0)
-            // remove
+            // for (int j = 0; j < squadB.size(); j++) {
+            // System.out.print(squadB.get(j).toString());
+            // System.out.print(" "+squadB.get(j).getHealthPoint() +" ");
+            // }
+            damageCalculator(i);
 
             sizeSquad = Math.min(squadB.size(), squadA.size());
+            System.out.println("---------------------------------------");
+            System.out.println("Presiona enter para el siguiente turno");
+            System.out.println("---------------------------------------");
+            s.nextLine();
+
         }
+
+        System.out.println("----------Descartando jugadores muertos---------");
+
+
+
+        for (int i = 0; i < squadA.size(); i++) {
+             if (squadA.get(i).getHealthPoint() <= 0) {
+                System.out.println("Descartando a : " + squadA.get(i).toString());
+                squadA.remove(i);
+            }
+        }
+
+        for (int i = 0; i < squadB.size(); i++) {
+            if (squadB.get(i).getHealthPoint() <= 0) {
+                System.out.println("Descartando a : " + squadB.get(i).toString());
+                squadB.remove(i);
+            }
+        }
+
+    }
+
+    public void damageCalculator(int i) {
+        System.out.println("Iniciando ronda " + (i+1) + " Los personajes a enfrentarse son: " +
+                squadA.get(i).toString().toUpperCase() + " VS " + squadB.get(i).toString().toUpperCase());
+
+        // TODO AGREGAR ARMADURA
+        System.out.println(
+                squadA.get(i).toString() + " Posee " + squadA.get(i).getHealthPoint() + "hp" + " armadura(falta)");
+        System.out.println(
+                squadB.get(i).toString() + " Posee " + squadB.get(i).getHealthPoint() + "hp" + " armadura(falta)");
+
+        int squadADamaged = squadA.get(i).randomPower() + squadA.get(i).getHateAgainstOrcs()
+                - squadA.get(i).getFearAgainstTrasgos();
+
+        int squadBDamaged = squadB.get(i).randomPower()
+                + (int) (squadB.get(i).randomPower() * squadB.get(i).getStrenghtBonusAgainstAll());
+
+        int vidaA = squadA.get(i).getHealthPoint();
+        int resolveforA = vidaA - squadBDamaged;
+
+        int vidaB = squadB.get(i).getHealthPoint();
+        int resolveforB = vidaB - squadADamaged;
+
+        // Atacan a squad B
+        if (resolveforB <= 0) {
+            // squadB.remove(i);
+            System.out.println(squadB.get(i) + " HA SIDO VENCIDO ");
+            squadB.get(i).setHealthPoint(resolveforB);
+        } else if (resolveforB > 0) {
+            System.out
+                .println("El ataque de " + squadA.get(i).toString() + " hacia " + squadB.get(i).toString() + " es de :"
+                        + squadADamaged);
+            squadB.get(i).setHealthPoint(resolveforB);
+
+            System.out.println("VIDA RESTANTE DE " + squadB.get(i).toString().toUpperCase() + squadB.get(i).getHealthPoint());
+
+        } else if (squadA.get(i).getHealthPoint() <= 0) {
+            System.out.println(squadA.get(i).toString() + " no pudo atacar porque fue vencido");
+        }
+
+        // Atacan a squad A
+        if (resolveforA <= 0) {
+            // squadA.remove(i);
+            System.out.println(squadA.get(i) + " HA SIDO VENCIDO");
+            squadA.get(i).setHealthPoint(resolveforA);
+            
+        } else if (resolveforA > 0) {
+            System.out
+                .println("El ataque de " + squadB.get(i).toString() + " hacia " + squadA.get(i).toString() + " es de :"
+                        + squadBDamaged);
+            System.out
+                .println("La vida restante de " + squadB.get(i).toString() + " es de :"
+                        + squadB.get(i).getHealthPoint());
+            squadA.get(i).setHealthPoint(resolveforA);
+            System.out.println("VIDA RESTANTE DE " + squadA.get(i).toString() + squadA.get(i).getHealthPoint());
+
+        } else if (squadB.get(i).getHealthPoint() <= 0) {
+            System.out.println(squadB.get(i).toString() + " no pudo atacar porque fue vencido");
+        }
+
+        
 
     }
 

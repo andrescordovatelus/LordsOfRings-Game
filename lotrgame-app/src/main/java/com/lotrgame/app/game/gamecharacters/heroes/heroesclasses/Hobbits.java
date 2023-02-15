@@ -40,4 +40,10 @@ public class Hobbits extends Heroes{
         return this.healthPoint;
     }
 
+    @Override
+    public String getName() {
+        // TODO Auto-generated method stub
+        return super.getName();
+    }
+
 }
