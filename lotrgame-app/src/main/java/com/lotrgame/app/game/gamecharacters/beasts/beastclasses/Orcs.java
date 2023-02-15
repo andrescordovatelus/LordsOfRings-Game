@@ -24,4 +24,8 @@ public class Orcs extends Beasts{
     public int getHealthPoint(){
         return this.healthPoint;
     }
+
+    public double getStrenghtBonusAgainstAll() {
+        return strenghtBonusAgainstAll;
+    }
 }

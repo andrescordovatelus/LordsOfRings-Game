@@ -2,6 +2,7 @@ package com.lotrgame.app.game;
 
 import java.util.ArrayList;
 
+import com.lotrgame.app.game.gamecharacters.Character;
 import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
@@ -30,89 +31,70 @@ public class Armies {
         for (int i = 0; i < sizeSquad; i++) {
             int aux = sizeSquad;
 
-
-            //TODO Logica de los vergazons entre armies
-            //getClass getName
-
             System.out.println(squadA.get(i).toString());   
             System.out.println("Estan atacandoooooo");
 
             int squadADamaged = squadA.get(i).randomPower() + squadA.get(i).getHateAgainstOrcs() - squadA.get(i).getFearAgainstTrasgos();
-           // int squadBDamaged = squadB.get(i).randomPower() 
+            int squadBDamaged = squadB.get(i).randomPower() + (int)(squadB.get(i).randomPower() * squadB.get(i).getStrenghtBonusAgainstAll());
 
             System.out.println(squadA.toString());
-
             System.out.println(squadB.toString());
 
+            // for (int j = 0; j < squadA.size(); j++) {
+            //     System.out.print(squadA.get(j).toString());
+            //     System.out.print(" "+ squadA.get(j).getHealthPoint() + " ");
+            // }
+            // System.out.println(" \n");
 
-
-            for (int j = 0; j < squadA.size(); j++) {
-                System.out.print(squadA.get(j).toString());
-                System.out.print(" "+ squadA.get(j).getHealthPoint() + " ");
-            }
-            System.out.println(" \n");
-
-            for (int j = 0; j < squadB.size(); j++) {
-                System.out.print(squadB.get(j).toString());
-                System.out.print(" "+squadB.get(j).getHealthPoint() +" ");
-            }
+            // for (int j = 0; j < squadB.size(); j++) {
+            //     System.out.print(squadB.get(j).toString());
+            //     System.out.print(" "+squadB.get(j).getHealthPoint() +" ");
+            // }
 
             System.out.println();
 
+
+
             
+            int vidaA = squadA.get(i).getHealthPoint();
+            int resolveforA = vidaA - squadBDamaged;
+            
+            if(resolveforA <= 0){
+                squadA.remove(i);
+            }
+            else{
+                squadA.get(i).setHealthPoint(resolveforA);
+                System.out.println( "VIDA RESRTANTE " + squadA.get(i).getHealthPoint());
+            }
+
 
             int vidaB = squadB.get(i).getHealthPoint();
+            int resolveforB = vidaB - squadADamaged;
 
-
-
-            int resolve = vidaB - squadADamaged;
-
-            System.out.println( "VIDA RESRTANTE " + squadB.get(i).getHealthPoint());
-
-            if(resolve <= 0){
+            if(resolveforB <= 0){
                 squadB.remove(i);
             }
             else{
-                squadB.get(i).setHealthPoint(resolve);
+                squadB.get(i).setHealthPoint(resolveforB);
+                System.out.println( "VIDA RESRTANTE " + squadB.get(i).getHealthPoint());
             }
-
-            //TODO HACER RESOLVE PARA EQUPO b
-
-            
-            int squadBDamaged = squadB.get(i).randomPower();
-            int vidaA = squadA.get(i).getHealthPoint();
-            int resolveforA = vidaA - squadBDamaged;
-
-           /*  System.out.println(squadADamaged);
-            System.out.println(resolve);
-            System.out.println(vidaB);*/
-            
-
-            
-
-
-            //squadB.get(i).setHealthPoint(resolve);
-            
-            // SQUADA PEGA
-            // squadB.healpoints -= squadA.randomPower() + hateAgainstOrcs - fearAgainstTrasgos
-            
-            // SQUADB PEGA
-            // squadA.healpoints -= squadB.(randomPower() + randomPower()*strenghtBonusAgainstAll)
-
-            // IF(squadA =< 0)
-            //     remove
-            
-            // IF(squadB =< 0)
-            //     remove
 
             sizeSquad = Math.min(squadB.size(), squadA.size());
         }
-
-        
-
     }
     
+    public void makeDamagedAgainst(int iterador, int vida, int resolve, ArrayList<Character> squad) {
+        int vidaB = squad.get(iterador).getHealthPoint();
+            int resolve = vida - squadADamaged;
 
+            if(resolveforB <= 0){
+                squadB.remove(i);
+            }
+            else{
+                squadB.get(i).setHealthPoint(resolveforB);
+                System.out.println( "VIDA RESRTANTE " + squadB.get(i).getHealthPoint());
+            }
+    }
     
     public void addCharacters(){
     CharacterFactory characterFactory = new CharacterFactory();
