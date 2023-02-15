@@ -33,7 +33,8 @@ public class LOTRGame {
         while(!turns.isAnyArmyDefeated()){
             turns.startTurn();
 
-           // s.wait();
+            System.out.println("Presiona enter para el siguiente turno");
+            s.nextLine();
 
         }
 
