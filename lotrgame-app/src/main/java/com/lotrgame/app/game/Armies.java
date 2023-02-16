@@ -49,19 +49,16 @@ public class Armies {
 
         System.out.println("----------Descartando jugadores muertos---------");
 
-        for (int i = 0; i < squadA.size(); i++) {
-             if (squadA.get(i).getHealthPoint() <= 0) {
-                System.out.println("Descartando a : " + squadA.get(i).toString());
-                squadA.remove(i);
-            }
-        }
 
-        for (int i = 0; i < squadB.size(); i++) {
-            if (squadB.get(i).getHealthPoint() <= 0) {
-                System.out.println("Descartando a : " + squadB.get(i).toString());
-                squadB.remove(i);
-            }
-        }
+        squadA.removeIf( (n) -> (
+            (n.getHealthPoint()<=0)
+
+        ));
+        
+        squadB.removeIf( (n) -> (
+            (n.getHealthPoint()<=0)
+
+        ));
 
     }
 
