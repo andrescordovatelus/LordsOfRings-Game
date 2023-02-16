@@ -54,7 +54,7 @@ public class Armies {
             (n.getHealthPoint()<=0)
 
         ));
-        
+
         squadB.removeIf( (n) -> (
             (n.getHealthPoint()<=0)
 
@@ -87,24 +87,24 @@ public class Armies {
 
         // Atacan a squad B
         if(squadB.get(i).getArmor()<squadADamaged){
-            if (resolveforB <= 0) {
-                // squadB.remove(i);
-                System.out.println("**** "+squadB.get(i) + " HA SIDO VENCIDO ****");
-                System.out.println();
-                squadB.get(i).setHealthPoint(resolveforB);
-            } else if (resolveforB > 0) {
+            if (resolveforB <= 0 && squadA.get(i).getHealthPoint()>0) {
                 System.out
                     .println("--El ataque de " + squadA.get(i).toString() + " hacia " + squadB.get(i).toString() + " es de :"
                             + squadADamaged+"--");
-                
+                System.out.println("**** "+squadB.get(i) + " HA SIDO VENCIDO ****");
+                System.out.println("----------------------------------------------------");
                 squadB.get(i).setHealthPoint(resolveforB);
-
+            } else if (resolveforB > 0 && squadA.get(i).getHealthPoint()>0) {
+                System.out
+                    .println("--El ataque de " + squadA.get(i).toString() + " hacia " + squadB.get(i).toString() + " es de :"
+                            + squadADamaged+"--");
+                squadB.get(i).setHealthPoint(resolveforB);
                 System.out.println("***VIDA RESTANTE DE " + squadB.get(i).toString().toUpperCase()+ " :" + squadB.get(i).getHealthPoint()+"***");
                 System.out.println();
             } else if (squadA.get(i).getHealthPoint() <= 0) {
                 System.out.println(squadA.get(i).toString() + " no pudo atacar porque fue vencido");
             }
-        }else{
+        }else if(squadB.get(i).getArmor()>= squadADamaged && squadA.get(i).getHealthPoint()>0){
             System.out.println("--El ataque de " + squadA.get(i).toString() + " hacia " + squadB.get(i).toString() + 
             " fallo al no superar su armadura--");
             System.out.println();
@@ -112,22 +112,26 @@ public class Armies {
 
         // Atacan a squad A
         if(squadA.get(i).getArmor()<squadBDamaged){
-            if (resolveforA <= 0) {
-                // squadA.remove(i);
-                System.out.println("**** "+squadA.get(i) + " HA SIDO VENCIDO ****");
-                System.out.println();
-                squadA.get(i).setHealthPoint(resolveforA);
-                
-            } else if (resolveforA > 0) {
+            if (resolveforA <= 0 && squadB.get(i).getHealthPoint()>0) {
                 System.out
                     .println("--El ataque de " + squadB.get(i).toString() + " hacia " + squadA.get(i).toString() + " es de :"
                             + squadBDamaged+"--");
+                System.out.println("**** "+squadA.get(i) + " HA SIDO VENCIDO ****");
+                System.out.println("----------------------------------------------------");
+                squadA.get(i).setHealthPoint(resolveforA);
+                
+            } else if (resolveforA > 0 && squadB.get(i).getHealthPoint()>0 ) {
+                System.out
+                    .println("--El ataque de " + squadB.get(i).toString() + " hacia " + squadA.get(i).toString() + " es de :"
+                            + squadBDamaged+"--");
+                squadA.get(i).setHealthPoint(resolveforA);
                 System.out.println("***VIDA RESTANTE DE " + squadA.get(i).toString()+" :" + squadA.get(i).getHealthPoint()+"***");
                 System.out.println();
+                
             } else if (squadB.get(i).getHealthPoint() <= 0) {
                 System.out.println(squadB.get(i).toString() + " no pudo atacar porque fue vencido");
             }
-        } else{
+        } else if(squadA.get(i).getArmor()>= squadBDamaged && squadB.get(i).getHealthPoint()>0){
             System.out.println("--El ataque de " + squadB.get(i).toString() + " hacia " + squadA.get(i).toString() + 
             " fallo al no superar su armadura--");
             System.out.println();

@@ -38,7 +38,6 @@ public class LOTRGame {
 
         }
 
-        System.out.println("Prueba de ifs");
         
         if(turns.getArmies().getSquadA().size()==0){
             System.out.println("EQUIPO 2 GANO");
