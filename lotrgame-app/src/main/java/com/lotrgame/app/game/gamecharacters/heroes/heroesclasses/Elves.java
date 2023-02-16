@@ -9,6 +9,7 @@ public class Elves extends Heroes{
         this.hateAgainstOrcs = 10;
         this.fearAgainstTrasgos = 0;
         this.healthPoint = 250;
+        this.armor = (int)(this.healthPoint*0.15);
     }
 
     @Override
@@ -16,19 +17,13 @@ public class Elves extends Heroes{
         int finalPower=0;
         int powerOne = (int)(Math.random()*100 +1);
         int powerTwo = (int)(Math.random()*100 +1);
-
-        System.out.println("Power1 " + powerOne);
-        System.out.println("Power2 " + powerTwo);
-
-
+        
         if(powerOne > powerTwo){
             finalPower = powerOne;
         }
         else{
             finalPower = powerTwo;
         }
-
-        System.out.println("final" + finalPower);
         return finalPower;
     }
 
@@ -45,6 +40,9 @@ public class Elves extends Heroes{
     public String getName() {
         // TODO Auto-generated method stub
         return super.getName();
+    }
+    public int getArmor() {
+        return armor;
     }
     
 }

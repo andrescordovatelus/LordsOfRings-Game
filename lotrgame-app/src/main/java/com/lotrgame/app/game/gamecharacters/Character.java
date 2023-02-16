@@ -4,6 +4,7 @@ public abstract class Character {
     protected String name;
     protected int healthPoint;
     protected int position;
+    protected int armor;
 
     public abstract int randomPower();
 
@@ -15,6 +16,11 @@ public abstract class Character {
     public String getName() {
         return name;
     }
+    
+    public int getArmor() {
+        return armor;
+    }
+
     
 }
 

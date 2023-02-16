@@ -8,6 +8,7 @@ public class Hobbits extends Heroes{
         this.hateAgainstOrcs = 0;
         this.fearAgainstTrasgos = 5;
         this.healthPoint = 200;
+        this.armor = (int)(this.healthPoint*0.15);
     }
 
     @Override
@@ -16,18 +17,12 @@ public class Hobbits extends Heroes{
         int powerOne = (int)(Math.random()*100 +1);
         int powerTwo = (int)(Math.random()*100 +1);
 
-        System.out.println("Power1 " + powerOne);
-        System.out.println("Power2 " + powerTwo);
-
-
         if(powerOne > powerTwo){
             finalPower = powerOne;
         }
         else{
             finalPower = powerTwo;
         }
-
-        System.out.println("final" + finalPower);
         return finalPower;
     }
 
@@ -46,4 +41,7 @@ public class Hobbits extends Heroes{
         return super.getName();
     }
 
+    public int getArmor() {
+        return armor;
+    }
 }
