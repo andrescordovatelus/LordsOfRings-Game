@@ -8,7 +8,6 @@ public abstract class Character {
 
     public abstract int randomPower();
 
-
     public void setHealthPoint(int healthPoint) {
         this.healthPoint = healthPoint;
     }
@@ -16,11 +15,9 @@ public abstract class Character {
     public String getName() {
         return name;
     }
-    
+
     public int getArmor() {
         return armor;
     }
 
-    
 }
-

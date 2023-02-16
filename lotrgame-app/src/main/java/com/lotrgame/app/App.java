@@ -12,8 +12,5 @@ public class App
     {
         LOTRGame game = new LOTRGame();
         game.setGame();
-
-        System.out.println("Prueba");
-
     }
 }
