@@ -1,4 +1,5 @@
 package com.lotrgame.app.game;
+
 import com.lotrgame.app.game.gamecharacters.beasts.Beasts;
 import com.lotrgame.app.game.gamecharacters.beasts.beastclasses.Orcs;
 import com.lotrgame.app.game.gamecharacters.beasts.beastclasses.Trasgos;
@@ -9,7 +10,8 @@ import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
 public class CharacterFactory {
 
-    public CharacterFactory(){}
+    public CharacterFactory() {
+    }
 
     public Heroes getNewCharacterHeroes(String characterType) {
         if (characterType == null) {

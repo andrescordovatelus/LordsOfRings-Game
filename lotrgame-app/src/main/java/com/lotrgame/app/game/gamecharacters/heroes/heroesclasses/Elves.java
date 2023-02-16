@@ -2,26 +2,25 @@ package com.lotrgame.app.game.gamecharacters.heroes.heroesclasses;
 
 import com.lotrgame.app.game.gamecharacters.heroes.Heroes;
 
-public class Elves extends Heroes{
+public class Elves extends Heroes {
 
-    public Elves(){
+    public Elves() {
         super();
         this.hateAgainstOrcs = 10;
         this.fearAgainstTrasgos = 0;
         this.healthPoint = 250;
-        this.armor = (int)(this.healthPoint*0.15);
+        this.armor = (int) (this.healthPoint * 0.15);
     }
 
     @Override
     public int randomPower() {
-        int finalPower=0;
-        int powerOne = (int)(Math.random()*100 +1);
-        int powerTwo = (int)(Math.random()*100 +1);
-        
-        if(powerOne > powerTwo){
+        int finalPower = 0;
+        int powerOne = (int) (Math.random() * 100 + 1);
+        int powerTwo = (int) (Math.random() * 100 + 1);
+
+        if (powerOne > powerTwo) {
             finalPower = powerOne;
-        }
-        else{
+        } else {
             finalPower = powerTwo;
         }
         return finalPower;
@@ -32,7 +31,7 @@ public class Elves extends Heroes{
         return "Elves";
     }
 
-    public int getHealthPoint(){
+    public int getHealthPoint() {
         return this.healthPoint;
     }
 
@@ -41,8 +40,9 @@ public class Elves extends Heroes{
         // TODO Auto-generated method stub
         return super.getName();
     }
+
     public int getArmor() {
         return armor;
     }
-    
+
 }
